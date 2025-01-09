@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         display.style.color = "green";
         break;
       default:
-        display.style.color = "black";
+        display.style.color = "white";
         break;
     }
     resultShown = true;
