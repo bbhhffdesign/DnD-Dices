@@ -5,17 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const savingThrowButtons = document.querySelectorAll(".salvation .button-sm");
   const proficiencyBonus = 2;
   let resultShown = false;
-  let lastRollExpression = ""; // Variable para guardar la última expresión de la tirada.
+  let lastRollExpression = "";
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       if (button.innerText === "C") {
         display.value = "";
         resultShown = false;
-        lastRollExpression = ""; // Limpiamos la última expresión.
+        lastRollExpression = ""; 
       } else if (button.innerText === "=") {
         if (lastRollExpression !== "") {
-          // Si hay una expresión guardada, repetirla.
           display.value = lastRollExpression;
           calculateResult(lastRollExpression);
         } else {
@@ -80,10 +79,42 @@ document.addEventListener("DOMContentLoaded", () => {
     displayResult(roll, mod, 0, total);
   }
 
+  // function calculateResult(expression) {
+  //   let dicePattern = /(\d*)d(\d+)/g;
+  //   let match;
+  //   let detailedExpression = expression;
+  //   while ((match = dicePattern.exec(expression)) !== null) {
+  //     let numDice = match[1] === "" ? 1 : parseInt(match[1]);
+  //     let diceType = parseInt(match[2]);
+  //     let rolls = [];
+  //     for (let i = 0; i < numDice; i++) {        
+  //       rolls.push(Math.floor(Math.random() * diceType) + 1);
+  //     }
+  //     let rollSum = rolls.reduce((acc, curr) => acc + curr, 0);
+  //     detailedExpression = detailedExpression.replace(
+  //       match[0],
+  //       `(${rolls.join(" + ")})`
+  //     );
+  //   }
+  //   try {
+  //     let result = eval(
+  //       detailedExpression.replace(/\(([^)]+)\)/g, (_, group) => eval(group))
+  //     );
+  //     display.value = `${detailedExpression} = ${result}`;
+  //     lastRollExpression = expression;
+  //     resultShown = true;
+  //   } catch {
+  //     display.value = "Error";
+  //     resultShown = false;
+  //   }
+  // }
   function calculateResult(expression) {
     let dicePattern = /(\d*)d(\d+)/g;
     let match;
     let detailedExpression = expression;
+    let isD20 = false; // Bandera para verificar si hay un d20.
+    let d20Rolls = []; // Para almacenar las tiradas de d20.
+  
     while ((match = dicePattern.exec(expression)) !== null) {
       let numDice = match[1] === "" ? 1 : parseInt(match[1]);
       let diceType = parseInt(match[2]);
@@ -91,22 +122,43 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; i < numDice; i++) {
         rolls.push(Math.floor(Math.random() * diceType) + 1);
       }
+  
+      if (diceType === 20) {
+        isD20 = true;
+        d20Rolls = rolls; // Guardamos las tiradas de d20 para evaluar después.
+      }
+  
       let rollSum = rolls.reduce((acc, curr) => acc + curr, 0);
       detailedExpression = detailedExpression.replace(
         match[0],
         `(${rolls.join(" + ")})`
       );
     }
+  
     try {
       let result = eval(
         detailedExpression.replace(/\(([^)]+)\)/g, (_, group) => eval(group))
       );
       display.value = `${detailedExpression} = ${result}`;
-      lastRollExpression = expression; // Guardamos la expresión para repetirla más tarde.
+      lastRollExpression = expression;
       resultShown = true;
+  
+      if (isD20) {
+        if (d20Rolls.includes(1)) {
+          display.style.color = "red";
+        } else if (d20Rolls.includes(20)) {
+          display.style.color = "green";
+        } else {
+          display.style.color = "white"; 
+        }
+      } else {
+        display.style.color = "white";
+      }
+  
     } catch {
       display.value = "Error";
       resultShown = false;
+      display.style.color = "black";
     }
   }
 
