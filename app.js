@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   // Paladín
   const attackRolls = {
-    'attack1': '2d4 + 2d8 + 3',
+    'attack1': '2d6 + 2d8 + 3',
     'attack2': '1d12 + 5',
     'attack3': '1d12 + 5',
     'attack4': '1d12 + 5'
@@ -232,7 +232,13 @@ document.addEventListener("DOMContentLoaded", () => {
     checkbox.classList.add('attack__crit');
     attackDiv.appendChild(checkbox);
     
-    attackDiv.addEventListener("click", () => handleAttackRoll(attackDiv, attackId));
+    attackDiv.addEventListener("click", (event) => {
+      // Evitar que el clic en el checkbox dispare la tirada
+      if (event.target.classList.contains('attack__crit')) {
+        return;
+      }
+      handleAttackRoll(attackDiv, attackId);
+    });
   });
 
   function handleAttackRoll(attackDiv, attackId) {
@@ -286,76 +292,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   //paladin
-//   const attackRolls = {
-//     'attack1': '2d6 + 2d8 + 3',
-//     'attack2': '1d12 + 5',
-//     'attack3': '1d12 + 5',
-//     'attack4': '1d12 + 5'
-//   };
-//   //bardo
-//   // const attackRolls = {
-//   //   'attack1': '2d6 + 2d8 + 3',
-//   //   'attack2': '1d12 + 5',
-//   //   'attack3': '1d12 + 5',
-//   //   'attack4': '1d12 + 5'
-//   // };
-
-//   document.querySelectorAll(".attack").forEach((attackDiv, index) => {
-//     const attackId = `attack${index + 1}`;
-//     attackDiv.addEventListener("click", () => handleAttackRoll(attackDiv, attackId));
-//   });
-
-//   function handleAttackRoll(attackDiv, attackId) {
-//     let rollExpression = attackRolls[attackId];
-//     const checkbox = attackDiv.querySelector(".attack__crit");
-    
-//     // Verificar si el checkbox existe
-//     if (checkbox) {
-//       const isCrit = checkbox.checked;
-//       rollExpression = adjustRollForCrit(rollExpression, isCrit);
-//     }
-
-//     calculateResult(rollExpression);
-//   }
-
-//   function adjustRollForCrit(expression, isCrit) {
-//     if (!isCrit) return expression;
-    
-//     return expression.replace(/(\d*)d(\d+)/g, (_, numDice, diceType) => {
-//       const doubledDice = numDice === '' ? 2 : parseInt(numDice) * 2;
-//       return `${doubledDice}d${diceType}`;
-//     });
-//   }
-
-//   function calculateResult(expression) {
-//     let dicePattern = /(\d*)d(\d+)/g;
-//     let match;
-//     let detailedExpression = expression;
-//     while ((match = dicePattern.exec(expression)) !== null) {
-//       let numDice = match[1] === "" ? 1 : parseInt(match[1]);
-//       let diceType = parseInt(match[2]);
-//       let rolls = [];
-//       for (let i = 0; i < numDice; i++) {
-//         rolls.push(Math.floor(Math.random() * diceType) + 1);
-//       }
-//       let rollSum = rolls.reduce((acc, curr) => acc + curr, 0);
-//       detailedExpression = detailedExpression.replace(
-//         match[0],
-//         `(${rolls.join(" + ")})`
-//       );
-//     }
-
-//     try {
-//       let result = eval(
-//         detailedExpression.replace(/\(([^)]+)\)/g, (_, group) => eval(group))
-//       );
-//       document.getElementById("display").value = `${detailedExpression} = ${result}`;
-//     } catch {
-//       document.getElementById("display").value = "Error";
-//     }
-//   }
-// });
