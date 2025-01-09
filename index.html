@@ -15,33 +15,46 @@
       <div id="proficiency-bonus">
         <label
           ><h3>
-            Proficiency Bonus: <span id="prof-bonus-value"> <i>2</i></span>
+            Competencia: <span id="prof-bonus-value"> <i>2</i></span>
           </h3></label
         >
       </div>
+      <div id="custom-roll-container">
+        <label>
+          Comp
+          <input type="checkbox" id="add-proficiency-bonus" checked>
+        </label>
+        <select class="custom-roll__attr" id="attribute-select">
+          <option value="none">--</option>
+          <option value="FUE">FUE</option>
+          <option value="DES">DES</option>
+          <option value="INT">INT</option>
+          <option value="SAB">SAB</option>
+          <option value="CAR">CAR</option>
+        </select>
+        <div class="roll-button" id="custom-roll-btn"><img src="dice-twenty-faces-one.svg" alt=""></div>
+      </div>
+<!-- 
       <div class="attacks">
+        
         <div class="attack clr-att clr-att1">
           <input type="text" name="attack1" id="" placeholder="attack1">
           <input type="checkbox" class="attack__crit" name="attack-crit" id="">
-          <!-- <img src="dice-twenty-faces-one.svg" alt=""> -->
         </div>
         <div class="attack clr-att clr-att2">
           <input type="text" name="attack2" id="">
           <input type="checkbox" class="attack__crit" name="attack-crit" id="">
-          <!-- <img src="dice-twenty-faces-one.svg" alt=""> -->
         </div>
         <div class="attack clr-att clr-att3">
           <input type="text" name="attack3" id="">
           <input type="checkbox" class="attack__crit" name="attack-crit" id="">
-          <!-- <img src="dice-twenty-faces-one.svg" alt=""> -->
         </div>
         <div class="attack clr-att clr-att4">
           <input type="text" name="attack4" id="">
           <input type="checkbox" class="attack__crit" name="attack-crit" id="">
-          <!-- <img src="dice-twenty-faces-one.svg" alt=""> -->
         </div>
 
-      </div>
+      </div> -->
       <div class="modifiers" id="modifiers">
         <div class="attribute">
           <input type="number" id="mod-fue" value="0" />

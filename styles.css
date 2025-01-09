@@ -73,10 +73,50 @@ box-sizing: border-box;
   /* padding: .2rem .5rem; */
 }
 
-.attacks{
-    /* position: relative; */
+#custom-roll-container {
+    background-color: black ;
+    padding: 1rem .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    border-radius: .5rem;
+  }
+  
+  .roll-button {
+    cursor: pointer;
+    background-color: #ccc;
+    border: 1px solid #999;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  #attribute-select {
+    margin-right: 10px;
+  }
 
+label{
+    font-size: 1.8rem;
 }
+
+#add-proficiency-bonus{
+    margin: 0;
+    padding: 0;
+    height:2rem;
+}
+  .custom-roll__attr{
+    font-size: 2rem;
+    /* background-color: red;
+    color: red; */
+
+  }
+  .roll-button img{
+    height: 3rem;
+  }
+
+
 .clr-att{
     background-color: #36689b;
 }

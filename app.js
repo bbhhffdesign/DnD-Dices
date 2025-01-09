@@ -162,6 +162,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+
+
+
+  const customRollButton = document.getElementById("custom-roll-btn");
+  customRollButton.addEventListener("click", handleCustomRoll);
+
+  function handleCustomRoll() {
+    const attribute = document.getElementById("attribute-select").value;
+    const addProficiency = document.getElementById("add-proficiency-bonus").checked;
+
+    const mod = getAttributeModifier(attribute);
+    const profBonus = addProficiency ? proficiencyBonus : 0;
+
+    const roll = Math.floor(Math.random() * 20) + 1;
+    const total = roll + mod + profBonus;
+
+    displayResult(roll, mod, profBonus, total);
+  }
+
+  function getAttributeModifier(attribute) {
+    if (attribute === 'none') {
+      return 0;
+    }
+    
+    // Obtiene el valor del input asociado al atributo seleccionado
+    const inputElement = document.getElementById(`mod-${attribute.toLowerCase()}`);
+    const mod = parseInt(inputElement.value) || 0; // Asegura que siempre se obtiene un número
+    return mod;
+  }
+
+
+
   function displayResult(roll, mod, profBonus, total) {
     display.value = `(${roll}) + ${mod} + ${profBonus} = ${total}`;
     switch (roll) {
@@ -178,3 +210,4 @@ document.addEventListener("DOMContentLoaded", () => {
     resultShown = true;
   }
 });
+
