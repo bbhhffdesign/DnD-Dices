@@ -214,10 +214,10 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   // Paladín
   const attackRolls = {
-    'attack1': '2d6 + 2d8 + 3',
-    'attack2': '1d12 + 5',
-    'attack3': '1d12 + 5',
-    'attack4': '1d12 + 5'
+    'attack1': '2d6 + 3',
+    'attack2': '1d8 + 3',
+    'attack3': '2d20 + 1d6 + 3',
+    'attack4': '2d20'
   };
 
   document.querySelectorAll(".attack").forEach((attackDiv, index) => {
@@ -292,3 +292,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const attributeSelect = document.getElementById("attribute-select");
+
+  attributeSelect.addEventListener("change", () => {
+    // Eliminar todas las clases relacionadas con atributos
+    attributeSelect.classList.remove('clr-fue', 'clr-des', 'clr-int', 'clr-sab', 'clr-car');
+
+    // Obtener la clase de la opción seleccionada
+    const selectedOption = attributeSelect.options[attributeSelect.selectedIndex];
+    const classToAdd = selectedOption.classList[0]; // Suponiendo que la opción tiene solo una clase
+
+    // Añadir la clase correspondiente al select si existe
+    if (classToAdd) {
+      attributeSelect.classList.add(classToAdd);
+    }
+  });
+});

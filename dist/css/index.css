@@ -228,6 +228,11 @@ h4 {
   background-color: rgba(195, 6, 185, 0.8156862745);
 }
 
+.clr-white {
+  background-color: white;
+  color: black;
+}
+
 .clr-dice {
   background-color: #015c64;
 }
@@ -302,8 +307,24 @@ h4 {
   background-color: rgb(118, 122, 209);
   text-align: center;
   padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .collapsed {
   height: 2rem;
+}
+
+.counter__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+  color: white;
+  border-bottom: solid 1px white;
+}
+
+.counter__numbers {
+  display: flex;
+  flex: 0.3;
+  justify-content: space-evenly;
 }/*# sourceMappingURL=index.css.map */
