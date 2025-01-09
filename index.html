@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Dados</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      #calculator {
+        width: 300px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      #display {
+        width: 100%;
+        height: 40px;
+        text-align: right;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 18px;
+      }
+      #buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .button {
+        width: 60px;
+        height: 60px;
+        margin: 5px 2.5%;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: #0056b3;
+      }
+      .modifiers {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+      .attribute {
+        flex: 1;
+        padding: .5rem;
+
+      }
+      input {
+        width: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calculator">
+      <input type="text" id="display" readonly />
+      <div id="buttons">
+        <div class="button">7</div>
+        <div class="button">8</div>
+        <div class="button">9</div>
+        <div class="button">C</div>
+        <div class="button">4</div>
+        <div class="button">5</div>
+        <div class="button">6</div>
+        <div class="button">*</div>
+        <div class="button">1</div>
+        <div class="button">2</div>
+        <div class="button">3</div>
+        <div class="button">-</div>
+        <div class="button">0</div>
+        <div class="button"></div>
+        <div class="button"></div>
+        <div class="button">+</div>
+        <div class="button">/</div>
+        <div class="button">d4</div>
+        <div class="button">d6</div>
+        <div class="button">d8</div>
+        <div class="button">=</div>
+        <div class="button">d10</div>
+        <div class="button">d12</div>
+        <div class="button">d20</div>
+      </div>
+      <div class="modifiers" id="modifiers">
+        <div class="attribute">
+          <input type="number" id="mod-fue" value="0" />
+          <div class="button">FUE</div>
+        </div>
+        <div class="attribute">
+          <input type="number" id="mod-des" value="0" />
+          <div class="button">DES</div>
+        </div>
+        <div class="attribute">
+          <input type="number" id="mod-con" value="0" />
+          <div class="button">CON</div>
+        </div>
+        <div class="attribute">
+          <input type="number" id="mod-int" value="0" />
+          <div class="button">INT</div>
+        </div>
+        <div class="attribute">
+          <input type="number" id="mod-sab" value="0" />
+          <div class="button">SAB</div>
+        </div>
+        <div class="attribute">
+          <input type="number" id="mod-car" value="0" />
+          <div class="button">CAR</div>
+        </div>
+      </div>
+      <!-- <div id="attribute-buttons"></div> -->
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
