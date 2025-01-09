@@ -4,175 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Dados</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        background-color: #000;
-      }
-      #calculator {
-        width: 300px;
-        background-color: rgb(65, 65, 65);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      #display {
-        width: 100%;
-        height: 40px;
-        text-align: right;
-        margin-bottom: 10px;
-        padding: 5px;
-        font-size: 18px;
-      }
-      #buttons {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      .button,
-      .button-sm {
-        /* background-color: #007bff; */
-        color: white;
-        border-radius: 5px;
-        background-color: grey;
-      }
-      .button {
-        position: relative;
-        background-color: #928d8d;
-        width: 60px;
-        height: 60px;
-        margin: 5px 2.5%;
-        text-align: center;
-        line-height: 40px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-      .button:hover {
-        background-color: #0056b3;
-      }
-      .button-sm {
-        height: 25px;
-        width: auto;
-        display: flex;
-        align-items: center;
-        /* padding: none; */
-        /* padding: .2rem .5rem; */
-      }
-      .modifiers {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-      }
-      .attribute {
-        flex: 1;
-        padding: 0.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .skills {
-        box-sizing: border-box;
-        width: 50%;
-      }
-      .skills div {
-        display: flex;
-        justify-content: space-between;
-        padding: 0.2rem 0;
-      }
-      .skills label,
-      .skills input {
-        margin: 0;
-        padding: 0;
-        width: 20px;
-      }
-      input {
-        width: 30px;
-      }
-      h3 {
-        color: rgb(165, 165, 165);
-      }
-
-      .clr-fue {
-        background-color: #e12a2adc;
-      }
-      .clr-des {
-        background-color: rgb(255, 106, 0);
-      }
-      .clr-con {
-        background-color: #6bcc2fca;
-      }
-      .clr-int {
-        background-color: rgb(40, 141, 213);
-      }
-      .clr-sab {
-        background-color: rgba(238, 238, 68, 0.774);
-      }
-      .clr-car {
-        background-color: #c306b9d0;
-      }
-      .clr-dice {
-        background-color: #015c64;
-      }
-      .clr-numbers {
-        background-color: rgb(209, 75, 75);
-      }
-      .clr-operators {
-        background-color: #195485;
-      }
-      .clr-equal {
-        background-color: #bfbfbf;
-      }
-      .clr-equal img {
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: auto;
-      }
-      .skill-salvation {
-        display: flex;
-      }
-      .salvations {
-        box-sizing: border-box;
-        width: 50%;
-      }
-      .salvation {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border: solid 1px black;
-      }
-      .salvation .button-sm {
-        width: 50%;
-        background-color: grey;
-        border: solid 1px black;
-        margin: 0.5rem 0;
-      }
-
-      .clr-d4 {
-        background-color: red;
-        color: white;
-      }
-
-      .clr-d6 {
-        background-color: blue;
-        color: white;
-      }
-
-      .clr-d8 {
-        background-color: green;
-        color: white;
-      }
-    </style>
+<link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div id="calculator">
+      <div class="display__container">
+        <input type="text" id="display" readonly />
+      </div>
+
       <div id="proficiency-bonus">
         <label
           ><h3>
@@ -207,7 +46,6 @@
         </div>
       </div>
 
-      <input type="text" id="display" readonly />
       <div id="buttons">
         <div class="button clr-numbers">7</div>
         <div class="button clr-numbers">8</div>
