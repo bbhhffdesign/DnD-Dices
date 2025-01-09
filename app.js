@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById('display');
     const buttons = document.querySelectorAll('.button');
-    const skillButtons = document.querySelectorAll('.skill-button');
-    const proficiencyBonus = 2;
+    const proficiencyBonus = 2; // El bono de competencia
     let resultShown = false;
 
     buttons.forEach(button => {
@@ -14,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 calculateResult();
             } else if (['FUE', 'DES', 'CON', 'INT', 'SAB', 'CAR'].includes(button.innerText)) {
                 handleAttributeRoll(button.innerText);
+            } else if (['Sal Fue', 'Sal Des', 'Sal Con', 'Sal Int', 'Sal Sab', 'Sal Car'].includes(button.innerText)) {
+                handleSavingThrow(button.innerText);
             } else {
                 if (resultShown) {
                     display.value = ''; // Clear the display if result was shown
@@ -24,24 +25,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    skillButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            handleSkillRoll(button.id, button.dataset.attribute);
-        });
-    });
-
-    function handleSkillRoll(skill, attribute) {
+    // Función para las tiradas de salvación
+    function handleSavingThrow(savingThrow) {
+        // Determinamos qué atributo usar (Fuerza, Destreza, etc.)
+        const attribute = savingThrow.split(' ')[1].toLowerCase();  // 'Fue', 'Des', etc.
+        
+        // Obtenemos el bonificador del atributo
         const mod = parseInt(document.getElementById(`mod-${attribute}`).value) || 0;
-        const useProficiency = document.getElementById(`${skill}-prof`).checked;
+        
+        // Verificamos si el checkbox está marcado para añadir el bono de competencia
+        const useProficiency = document.getElementById(`sal-${attribute}-prof`).checked;
         const profBonus = useProficiency ? proficiencyBonus : 0;
+
+        // Realizamos la tirada de dado de 20 caras
         const roll = Math.floor(Math.random() * 20) + 1;
+        
+        // Calculamos el total de la tirada
         const total = roll + mod + profBonus;
+        
+        // Generamos el texto del resultado
         let resultText = `(${roll}) + ${mod} + ${profBonus} = ${total}`;
         
+        // Si el dado es 1 o 20, es una crítica
         if (roll === 1 || roll === 20) {
             resultText += " crit";
         }
 
+        // Mostramos el resultado
         display.value = resultText;
         resultShown = true;
     }
