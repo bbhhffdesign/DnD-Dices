@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById('display');
     const buttons = document.querySelectorAll('.button');
+    const skillButtons = document.querySelectorAll('.skill-button');
+    const proficiencyBonus = 2;
     let resultShown = false;
 
     buttons.forEach(button => {
@@ -22,11 +24,39 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    skillButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            handleSkillRoll(button.id, button.dataset.attribute);
+        });
+    });
+
+    function handleSkillRoll(skill, attribute) {
+        const mod = parseInt(document.getElementById(`mod-${attribute}`).value) || 0;
+        const useProficiency = document.getElementById(`${skill}-prof`).checked;
+        const profBonus = useProficiency ? proficiencyBonus : 0;
+        const roll = Math.floor(Math.random() * 20) + 1;
+        const total = roll + mod + profBonus;
+        let resultText = `(${roll}) + ${mod} + ${profBonus} = ${total}`;
+        
+        if (roll === 1 || roll === 20) {
+            resultText += " crit";
+        }
+
+        display.value = resultText;
+        resultShown = true;
+    }
+
     function handleAttributeRoll(attribute) {
         const mod = parseInt(document.getElementById(`mod-${attribute.toLowerCase()}`).value) || 0;
         const roll = Math.floor(Math.random() * 20) + 1;
         const total = roll + mod;
-        display.value = `(${roll}) + ${mod} = ${total}`;
+        let resultText = `(${roll}) + ${mod} = ${total}`;
+        
+        if (roll === 1 || roll === 20) {
+            resultText += " crit";
+        }
+
+        display.value = resultText;
         resultShown = true;
     }
 
