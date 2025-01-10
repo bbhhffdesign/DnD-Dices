@@ -46,28 +46,36 @@ document.addEventListener("DOMContentLoaded", () => {
       handleSavingThrowRoll(attribute);
     });
   });
-
   function handleSkillRoll(skill, attribute) {
-    const mod =
-      parseInt(document.getElementById(`mod-${attribute}`).value) || 0;
+    const mod = parseInt(document.getElementById(`mod-${attribute}`).value) || 0;
     const useProficiency = document.getElementById(`${skill}-prof`).checked;
-    const profBonus = useProficiency ? proficiencyBonus : 0;
-    const roll = Math.floor(Math.random() * 20) + 1;
-    const total = roll + mod + profBonus;
-    displayResult(roll, mod, profBonus, total);
-  }
+    const useDoubleProficiency = document.getElementById(`${skill}-dbl-prof`).checked;
+    const useHalfProficiency = document.getElementById('half-prof').checked;
 
-  function handleSavingThrowRoll(attribute) {
-    const mod =
-      parseInt(document.getElementById(`mod-${attribute}`).value) || 0;
-    const useProficiency = document.getElementById(
-      `sal-${attribute}-prof`
-    ).checked;
-    const profBonus = useProficiency ? proficiencyBonus : 0;
+    let profBonus = 0;
+    if (useDoubleProficiency) {
+        profBonus = proficiencyBonus * 2;
+    } else if (useProficiency) {
+        profBonus = proficiencyBonus;
+    } else if (useHalfProficiency) {
+        profBonus = Math.floor(proficiencyBonus / 2); // Redondea hacia abajo
+    }
+
     const roll = Math.floor(Math.random() * 20) + 1;
     const total = roll + mod + profBonus;
     displayResult(roll, mod, profBonus, total);
-  }
+}
+
+function handleSavingThrowRoll(attribute) {
+    const mod = parseInt(document.getElementById(`mod-${attribute}`).value) || 0;
+    const useProficiency = document.getElementById(`sal-${attribute}-prof`).checked;
+    const useDoubleProficiency = document.getElementById(`sal-${attribute}-dbl-prof`)?.checked || false;
+    const profBonus = useProficiency ? proficiencyBonus : 0;
+    const doubleProfBonus = useDoubleProficiency ? proficiencyBonus : 0;
+    const roll = Math.floor(Math.random() * 20) + 1;
+    const total = roll + mod + profBonus + doubleProfBonus;
+    displayResult(roll, mod, profBonus + doubleProfBonus, total);
+}
 
   function handleAttributeRoll(attribute) {
     const mod =
@@ -79,41 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
     displayResult(roll, mod, 0, total);
   }
 
-  // function calculateResult(expression) {
-  //   let dicePattern = /(\d*)d(\d+)/g;
-  //   let match;
-  //   let detailedExpression = expression;
-  //   while ((match = dicePattern.exec(expression)) !== null) {
-  //     let numDice = match[1] === "" ? 1 : parseInt(match[1]);
-  //     let diceType = parseInt(match[2]);
-  //     let rolls = [];
-  //     for (let i = 0; i < numDice; i++) {        
-  //       rolls.push(Math.floor(Math.random() * diceType) + 1);
-  //     }
-  //     let rollSum = rolls.reduce((acc, curr) => acc + curr, 0);
-  //     detailedExpression = detailedExpression.replace(
-  //       match[0],
-  //       `(${rolls.join(" + ")})`
-  //     );
-  //   }
-  //   try {
-  //     let result = eval(
-  //       detailedExpression.replace(/\(([^)]+)\)/g, (_, group) => eval(group))
-  //     );
-  //     display.value = `${detailedExpression} = ${result}`;
-  //     lastRollExpression = expression;
-  //     resultShown = true;
-  //   } catch {
-  //     display.value = "Error";
-  //     resultShown = false;
-  //   }
-  // }
   function calculateResult(expression) {
     let dicePattern = /(\d*)d(\d+)/g;
     let match;
     let detailedExpression = expression;
-    let isD20 = false; // Bandera para verificar si hay un d20.
-    let d20Rolls = []; // Para almacenar las tiradas de d20.
+    let isD20 = false; 
+    let d20Rolls = []; 
   
     while ((match = dicePattern.exec(expression)) !== null) {
       let numDice = match[1] === "" ? 1 : parseInt(match[1]);
@@ -125,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       if (diceType === 20) {
         isD20 = true;
-        d20Rolls = rolls; // Guardamos las tiradas de d20 para evaluar después.
+        d20Rolls = rolls; 
       }
   
       let rollSum = rolls.reduce((acc, curr) => acc + curr, 0);
@@ -186,9 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return 0;
     }
     
-    // Obtiene el valor del input asociado al atributo seleccionado
     const inputElement = document.getElementById(`mod-${attribute.toLowerCase()}`);
-    const mod = parseInt(inputElement.value) || 0; // Asegura que siempre se obtiene un número
+    const mod = parseInt(inputElement.value) || 0; 
     return mod;
   }
 
@@ -223,17 +201,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".attack").forEach((attackDiv, index) => {
     const attackId = `attack${index + 1}`;
     
-    // Establecer el texto interno del div con la tirada de dados correspondiente
     attackDiv.innerText = attackRolls[attackId];
     
-    // Agregar el checkbox al div después de establecer el texto
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.classList.add('attack__crit');
     attackDiv.appendChild(checkbox);
     
     attackDiv.addEventListener("click", (event) => {
-      // Evitar que el clic en el checkbox dispare la tirada
       if (event.target.classList.contains('attack__crit')) {
         return;
       }
@@ -245,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let rollExpression = attackRolls[attackId];
     const checkbox = attackDiv.querySelector(".attack__crit");
     
-    // Verificar si el checkbox existe
+
     if (checkbox) {
       const isCrit = checkbox.checked;
       rollExpression = adjustRollForCrit(rollExpression, isCrit);
@@ -296,14 +271,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const attributeSelect = document.getElementById("attribute-select");
 
   attributeSelect.addEventListener("change", () => {
-    // Eliminar todas las clases relacionadas con atributos
     attributeSelect.classList.remove('clr-fue', 'clr-des', 'clr-int', 'clr-sab', 'clr-car');
 
-    // Obtener la clase de la opción seleccionada
     const selectedOption = attributeSelect.options[attributeSelect.selectedIndex];
-    const classToAdd = selectedOption.classList[0]; // Suponiendo que la opción tiene solo una clase
+    const classToAdd = selectedOption.classList[0];
 
-    // Añadir la clase correspondiente al select si existe
     if (classToAdd) {
       attributeSelect.classList.add(classToAdd);
     }
