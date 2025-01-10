@@ -124,9 +124,9 @@ function handleSavingThrowRoll(attribute) {
   
       if (isD20) {
         if (d20Rolls.includes(1)) {
-          display.style.color = "red";
+          display.style.color = "#ff0000";
         } else if (d20Rolls.includes(20)) {
-          display.style.color = "green";
+          display.style.color = "#46d665";
         } else {
           display.style.color = "white"; 
         }
@@ -170,19 +170,20 @@ function handleSavingThrowRoll(attribute) {
     return mod;
   }
 
-
-
   function displayResult(roll, mod, profBonus, total) {
     display.value = `(${roll}) + ${mod} + ${profBonus} = ${total}`;
     switch (roll) {
       case 1:
-        display.style.color = "red";
+        display.style.color = "#ff0000"; //rojo
+        display.style.fontWeight = "600";
         break;
       case 20:
-        display.style.color = "green";
+        display.style.color = "#46d665"; //verde
+        display.style.fontWeight = "600";
         break;
       default:
         display.style.color = "white";
+        display.style.fontWeight = "400";
         break;
     }
     resultShown = true;

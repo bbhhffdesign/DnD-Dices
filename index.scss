@@ -23,24 +23,31 @@ input {
 .display__container {
   position: sticky;
   width: inherit;
+  overflow: hidden;
   top: 1rem;
   z-index: 1;
+  height: 3rem;
+  background-color: #7d7d7d;
+  border-radius: .5rem;
+  border: solid 2px black;
+  
 }
 #display {
+  position: absolute;
   width: 100%;
   text-align: right;
+  right: 1rem;
+  border: none;
   margin: 0;
   padding: 0;
   font-size: 2.5rem;
   line-height: 3rem;
-  background-color: #7d7d7d;
   z-index: 1;
   color: black;
-  border-radius: .5rem;
+  background-color: transparent;
 }
 #buttons {
   width: 100%;
-//   height: 60%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -284,7 +291,7 @@ h4 {
 }
 
 .clr-d4 {
-  background-color: red;
+  background-color: #ff0000;
   color: white;
 }
 
@@ -294,7 +301,7 @@ h4 {
 }
 
 .clr-d8 {
-  background-color: green;
+  background-color: #46d665;
   color: white;
 }
 
@@ -305,19 +312,19 @@ h4 {
     border-radius: 0 0 1rem 1rem;
     margin: 1rem 0;
     overflow: hidden;
-    height: auto;
+    height: 2rem;
     
     .tab{
-        background-color: rgb(118, 122, 209);
-        text-align: center;
-        padding: .5rem;
-        display: flex;
-        justify-content: space-between;
+      background-color: rgb(118, 122, 209);
+      text-align: center;
+      padding: .5rem;
+      display: flex;
+      justify-content: space-between;
     }
-}
-
-.collapsed{
-    height: 2rem;
+  }
+  
+  .collapsed{
+  height: auto;
 }
 .counter-1{
     background: #a44949;
@@ -336,6 +343,7 @@ h4 {
     padding: .8rem;
     color: white;
     border-bottom: solid 1px black;
+    
 }
 
 .counter__numbers{
