@@ -50,6 +50,38 @@
   font-style: normal;
 }
 
+.almendra-regular {
+  font-family: "Almendra", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.almendra-bold {
+  font-family: "Almendra", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.almendra-regular-italic {
+  font-family: "Almendra", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.almendra-bold-italic {
+  font-family: "Almendra", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.germania-one-regular {
+  font-family: "Germania One", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .1rem;
+}
+
+
 
 body {
   font-family: Arial, sans-serif;
@@ -72,6 +104,7 @@ input {
   padding-top: 1rem;
   border-radius: 1.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
 }
 .display__container {
   position: sticky;
@@ -119,6 +152,9 @@ input {
   color: white;
   border-radius: 5px;
   background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .button {
   position: relative;
@@ -145,6 +181,10 @@ input {
   align-items: center;
   /* padding: none; */
   /* padding: .2rem .5rem; */
+}
+.prof-txt{
+  color: white;
+  margin: 0rem .5rem;
 }
 
 #custom-roll-container {
@@ -181,6 +221,9 @@ input[type='checkbox'] {
     width: 30px;
  }
 
+ #proficiency-bonus{
+  margin: 1rem auto;
+ }
 #add-proficiency-bonus {
   margin: 0;
   padding: 0;
@@ -229,9 +272,10 @@ input[type='checkbox'] {
   align-items: center;
 
   input{
+  font-family: "Iceberg", serif;
    width: 3rem;
    text-align: center;
-   font-size: 2rem;
+   font-size: 2.5rem;
    background-color: rgb(85, 85, 85);
    border-radius: .3rem; 
    color: white;
@@ -325,6 +369,8 @@ input[type='checkbox'] {
   left: 0;
   height: 100%;
   width: auto;
+  left: 50%;   
+  transform: translateX(-50%);
 }
 .skill-salvation {
   display: flex;
@@ -371,7 +417,7 @@ input[type='checkbox'] {
     border-radius: 0 0 1rem 1rem;
     margin: 1rem 0;
     overflow: hidden;
-    height: 3.5rem;
+    height: 3rem;
     
     .tab{
       background-color: rgb(118, 122, 209);
