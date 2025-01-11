@@ -1,3 +1,56 @@
+@font-face{
+  src: url("/dist/digital-7.ttf");
+  font-family: "display";
+  font-weight: 400;
+}
+
+.pirata-one-regular {
+  font-family: "Pirata One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+}
+.chenla-regular {
+  font-family: "Chenla", serif;
+  font-weight: 400;
+  font-style: normal;
+  word-spacing: -.5rem;
+}
+.fnt-display {
+  font-family: "New Rocker", serif;
+  font-weight: 400;
+  font-style: normal;
+  word-spacing: -.5rem;
+}
+.fnt-pr-light{
+  font-family: "Rubik", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+// .fnt-pr-normal{
+//   font-family: "Rubik", serif;
+//   font-optical-sizing: auto;
+//   font-weight: 400;
+//   font-style: normal;
+// }
+// .fnt-pr-heavy{
+//   font-family: "Rubik", serif;
+//   font-optical-sizing: auto;
+//   font-weight: 800;
+//   font-style: bold;
+// }
+// .fnt-display{
+//   font-family: "display";
+// }
+
+.iceberg-regular {
+  font-family: "Iceberg", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -16,7 +69,7 @@ input {
   position: relative;
   background-color: rgb(65, 65, 65);
   padding: .5rem;
-  padding-top: 3rem;
+  padding-top: 1rem;
   border-radius: 1.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -24,9 +77,9 @@ input {
   position: sticky;
   width: inherit;
   overflow: hidden;
-  top: 1rem;
+  top: 0rem;
   z-index: 1;
-  height: 3rem;
+  height: 4rem;
   background-color: #7d7d7d;
   border-radius: .5rem;
   border: solid 2px black;
@@ -34,17 +87,25 @@ input {
 }
 #display {
   position: absolute;
+  z-index: 1;
   width: 100%;
   text-align: right;
-  right: 1rem;
+  right: 0rem;
   border: none;
   margin: 0;
   padding: 0;
-  font-size: 2.5rem;
-  line-height: 3rem;
-  z-index: 1;
+  // padding-right: 1rem;
+  font-size: 3.5rem;
+  word-spacing: -.4rem;
+  letter-spacing: -.1rem;
+  // line-height: 3rem;
   color: black;
   background-color: transparent;
+  // font-size: 3rem;
+  // -webkit-text-stroke: 1px black;
+}
+.display-crit{
+  -webkit-text-stroke: 1px black;
 }
 #buttons {
   width: 100%;
@@ -224,9 +285,6 @@ input[type='checkbox'] {
     width: 100%;
 }
 
-h4 {
-  color: rgb(165, 165, 165);
-}
 
 .clr-fue {
   background-color: #e12a2adc;
@@ -302,6 +360,7 @@ h4 {
 
 .clr-d8 {
   background-color: #46d665;
+  // color: #7d7d7d;
   color: white;
 }
 
@@ -312,7 +371,7 @@ h4 {
     border-radius: 0 0 1rem 1rem;
     margin: 1rem 0;
     overflow: hidden;
-    height: 2rem;
+    height: 3.5rem;
     
     .tab{
       background-color: rgb(118, 122, 209);

@@ -1,3 +1,42 @@
+@font-face {
+  src: url("/dist/digital-7.ttf");
+  font-family: "display";
+  font-weight: 400;
+}
+.pirata-one-regular {
+  font-family: "Pirata One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+.chenla-regular {
+  font-family: "Chenla", serif;
+  font-weight: 400;
+  font-style: normal;
+  word-spacing: -0.5rem;
+}
+
+.fnt-display {
+  font-family: "New Rocker", serif;
+  font-weight: 400;
+  font-style: normal;
+  word-spacing: -0.5rem;
+}
+
+.fnt-pr-light {
+  font-family: "Rubik", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.iceberg-regular {
+  font-family: "Iceberg", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -18,7 +57,7 @@ input {
   position: relative;
   background-color: rgb(65, 65, 65);
   padding: 0.5rem;
-  padding-top: 3rem;
+  padding-top: 1rem;
   border-radius: 1.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -27,9 +66,9 @@ input {
   position: sticky;
   width: inherit;
   overflow: hidden;
-  top: 1rem;
+  top: 0rem;
   z-index: 1;
-  height: 3rem;
+  height: 4rem;
   background-color: #7d7d7d;
   border-radius: 0.5rem;
   border: solid 2px black;
@@ -37,17 +76,22 @@ input {
 
 #display {
   position: absolute;
+  z-index: 1;
   width: 100%;
   text-align: right;
-  right: 1rem;
+  right: 0rem;
   border: none;
   margin: 0;
   padding: 0;
-  font-size: 2.5rem;
-  line-height: 3rem;
-  z-index: 1;
+  font-size: 3.5rem;
+  word-spacing: -0.4rem;
+  letter-spacing: -0.1rem;
   color: black;
   background-color: transparent;
+}
+
+.display-crit {
+  -webkit-text-stroke: 1px black;
 }
 
 #buttons {
@@ -233,10 +277,6 @@ input[type=checkbox] {
   width: 100%;
 }
 
-h4 {
-  color: rgb(165, 165, 165);
-}
-
 .clr-fue {
   background-color: rgba(225, 42, 42, 0.862745098);
 }
@@ -335,7 +375,7 @@ h4 {
   border-radius: 0 0 1rem 1rem;
   margin: 1rem 0;
   overflow: hidden;
-  height: 2rem;
+  height: 3.5rem;
 }
 .separator .tab {
   background-color: rgb(118, 122, 209);

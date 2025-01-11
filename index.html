@@ -4,20 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chenla&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="dist/css/index.css" />
   </head>
   <body>
-    <div id="calculator">
+    <div id="calculator" class="pirata-one-regular">
       <div class="display__container">
-        <input type="text" id="display" readonly />
+        <input type="text" id="display" class="iceberg-regular" readonly />
       </div>
 
       <div id="proficiency-bonus">
-        <label
-          ><h4>
-            Competencia: <span id="prof-bonus-value"> <i>2</i></span>
-          </h4></label
-        >
+        <label>
+          Competencia: <span id="prof-bonus-value"> <i>2</i></span>
+        </label>
       </div>
 
       <div id="custom-roll-container">
@@ -28,10 +64,10 @@
         <select class="custom-roll__attr" id="attribute-select">
           <option value="none">--</option>
           <option value="FUE" class="clr-fue">FUE</option>
-          <option value="DES"class="clr-des">DES</option>
-          <option value="INT"class="clr-int">INT</option>
-          <option value="SAB"class="clr-sab">SAB</option>
-          <option value="CAR"class="clr-car">CAR</option>
+          <option value="DES" class="clr-des">DES</option>
+          <option value="INT" class="clr-int">INT</option>
+          <option value="SAB" class="clr-sab">SAB</option>
+          <option value="CAR" class="clr-car">CAR</option>
         </select>
         <div class="roll-button" id="custom-roll-btn">
           <img src="dice-twenty-faces-one.svg" alt="" />
@@ -41,13 +77,9 @@
       <div class="separator">
         <div class="tab">
           <div>
-            <strong>
-              CALCULADORA 
-            </strong>
+            <strong> CALCULADORA </strong>
           </div>
-          <div>
-            ▲▼
-          </div>
+          <div>▲▼</div>
         </div>
         <div id="buttons">
           <div class="button clr-numbers">7</div>
@@ -87,14 +119,9 @@
       <div class="separator collapsed">
         <div class="tab">
           <div>
-            <strong>
-              ATRIBUTOS 
-
-            </strong>
+            <strong> ATRIBUTOS </strong>
           </div>
-          <div>
-            ▲▼
-          </div>
+          <div>▲▼</div>
         </div>
         <div class="modifiers" id="modifiers">
           <div class="attribute">
@@ -124,15 +151,12 @@
         </div>
       </div>
 
-
       <div class="separator">
         <div class="tab">
           <div>
             <strong>CONTADORES </strong>
           </div>
-          <div>
-            ▲▼
-          </div>
+          <div>▲▼</div>
         </div>
 
         <div class="counter__container counter-1">
@@ -164,14 +188,9 @@
       <div class="separator">
         <div class="tab">
           <div>
-            <strong>
-              PERSONALIZADOS 
-
-            </strong>
+            <strong> PERSONALIZADOS </strong>
           </div>
-          <div>
-            ▲▼
-          </div>
+          <div>▲▼</div>
         </div>
         <div class="attacks">
           <div class="attack clr-att clr-att1">
@@ -210,267 +229,474 @@
         </div>
       </div>
 
-
       <div class="separator">
         <div class="tab">
           <div>
-            <strong>
-              HABILIDADES / SALVACION 
-            </strong>
+            <strong> HABILIDADES / SALVACION </strong>
           </div>
-          <div>
-            ▲▼
-          </div>
+          <div>▲▼</div>
         </div>
         <div class="skill__mods">
           Jack of all
-          <input type="checkbox" name="half-prof" id="half-prof">
+          <input type="checkbox" name="half-prof" id="half-prof" />
         </div>
         <div class="skill-salvation">
           <div class="skills" id="skills">
             <div class="skills__col">
               <div class="clr-des">
-                <button class="button button-sm skill-button" data-attribute="des" id="acrobatics">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="des"
+                  id="acrobatics"
+                >
                   Acrobacias
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="acrobatics-dbl-prof" id="acrobatics-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="acrobatics-dbl-prof"
+                      id="acrobatics-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="acrobatics-prof" id="acrobatics-prof" />
+                    <input
+                      type="checkbox"
+                      name="acrobatics-prof"
+                      id="acrobatics-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-sab">
-                <button class="button button-sm skill-button" data-attribute="sab" id="animal-handling">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="sab"
+                  id="animal-handling"
+                >
                   T. Animales
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="animal-handling-dbl-prof" id="animal-handling-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="animal-handling-dbl-prof"
+                      id="animal-handling-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="animal-handling-prof" id="animal-handling-prof" />
+                    <input
+                      type="checkbox"
+                      name="animal-handling-prof"
+                      id="animal-handling-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-int">
-                <button class="button button-sm skill-button" data-attribute="int" id="arcana">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="int"
+                  id="arcana"
+                >
                   Arcano
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="arcana-dbl-prof" id="arcana-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="arcana-dbl-prof"
+                      id="arcana-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="arcana-prof" id="arcana-prof" />
+                    <input
+                      type="checkbox"
+                      name="arcana-prof"
+                      id="arcana-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-fue">
-                <button class="button button-sm skill-button" data-attribute="fue" id="athletics">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="fue"
+                  id="athletics"
+                >
                   Atletismo
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="athletics-dbl-prof" id="athletics-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="athletics-dbl-prof"
+                      id="athletics-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="athletics-prof" id="athletics-prof" />
+                    <input
+                      type="checkbox"
+                      name="athletics-prof"
+                      id="athletics-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-car">
-                <button class="button button-sm skill-button" data-attribute="car" id="deception">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="car"
+                  id="deception"
+                >
                   Engaño
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="deception-dbl-prof" id="deception-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="deception-dbl-prof"
+                      id="deception-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="deception-prof" id="deception-prof" />
+                    <input
+                      type="checkbox"
+                      name="deception-prof"
+                      id="deception-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-int">
-                <button class="button button-sm skill-button" data-attribute="int" id="history">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="int"
+                  id="history"
+                >
                   Historia
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="history-dbl-prof" id="history-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="history-dbl-prof"
+                      id="history-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="history-prof" id="history-prof" />
+                    <input
+                      type="checkbox"
+                      name="history-prof"
+                      id="history-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-sab">
-                <button class="button button-sm skill-button" data-attribute="sab" id="insight">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="sab"
+                  id="insight"
+                >
                   Perspicacia
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="insight-dbl-prof" id="insight-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="insight-dbl-prof"
+                      id="insight-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="insight-prof" id="insight-prof" />
+                    <input
+                      type="checkbox"
+                      name="insight-prof"
+                      id="insight-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-car">
-                <button class="button button-sm skill-button" data-attribute="car" id="intimidation">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="car"
+                  id="intimidation"
+                >
                   Intimidación
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="intimidation-dbl-prof" id="intimidation-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="intimidation-dbl-prof"
+                      id="intimidation-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="intimidation-prof" id="intimidation-prof" />
+                    <input
+                      type="checkbox"
+                      name="intimidation-prof"
+                      id="intimidation-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-int">
-                <button class="button button-sm skill-button" data-attribute="int" id="investigation">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="int"
+                  id="investigation"
+                >
                   Investigación
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="investigation-dbl-prof" id="investigation-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="investigation-dbl-prof"
+                      id="investigation-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="investigation-prof" id="investigation-prof" />
+                    <input
+                      type="checkbox"
+                      name="investigation-prof"
+                      id="investigation-prof"
+                    />
                   </label>
                 </div>
               </div>
             </div>
             <div class="skills__col">
               <div class="clr-sab">
-                <button class="button button-sm skill-button" data-attribute="sab" id="medicine">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="sab"
+                  id="medicine"
+                >
                   Medicina
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="medicine-dbl-prof" id="medicine-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="medicine-dbl-prof"
+                      id="medicine-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="medicine-prof" id="medicine-prof" />
+                    <input
+                      type="checkbox"
+                      name="medicine-prof"
+                      id="medicine-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-int">
-                <button class="button button-sm skill-button" data-attribute="int" id="nature">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="int"
+                  id="nature"
+                >
                   Naturaleza
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="nature-dbl-prof" id="nature-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="nature-dbl-prof"
+                      id="nature-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="nature-prof" id="nature-prof" />
+                    <input
+                      type="checkbox"
+                      name="nature-prof"
+                      id="nature-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-sab">
-                <button class="button button-sm skill-button" data-attribute="sab" id="perception">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="sab"
+                  id="perception"
+                >
                   Percepción
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="perception-dbl-prof" id="perception-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="perception-dbl-prof"
+                      id="perception-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="perception-prof" id="perception-prof" />
+                    <input
+                      type="checkbox"
+                      name="perception-prof"
+                      id="perception-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-car">
-                <button class="button button-sm skill-button" data-attribute="car" id="performance">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="car"
+                  id="performance"
+                >
                   Interpretación
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="performance-dbl-prof" id="performance-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="performance-dbl-prof"
+                      id="performance-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="performance-prof" id="performance-prof" />
+                    <input
+                      type="checkbox"
+                      name="performance-prof"
+                      id="performance-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-car">
-                <button class="button button-sm skill-button" data-attribute="car" id="persuasion">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="car"
+                  id="persuasion"
+                >
                   Persuasión
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="persuasion-dbl-prof" id="persuasion-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="persuasion-dbl-prof"
+                      id="persuasion-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="persuasion-prof" id="persuasion-prof" />
+                    <input
+                      type="checkbox"
+                      name="persuasion-prof"
+                      id="persuasion-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-int">
-                <button class="button button-sm skill-button" data-attribute="int" id="religion">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="int"
+                  id="religion"
+                >
                   Religión
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="religion-dbl-prof" id="religion-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="religion-dbl-prof"
+                      id="religion-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="religion-prof" id="religion-prof" />
+                    <input
+                      type="checkbox"
+                      name="religion-prof"
+                      id="religion-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-des">
-                <button class="button button-sm skill-button" data-attribute="des" id="sleight-of-hand">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="des"
+                  id="sleight-of-hand"
+                >
                   J. de Manos
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="sleight-of-hand-dbl-prof" id="sleight-of-hand-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="sleight-of-hand-dbl-prof"
+                      id="sleight-of-hand-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="sleight-of-hand-prof" id="sleight-of-hand-prof" />
+                    <input
+                      type="checkbox"
+                      name="sleight-of-hand-prof"
+                      id="sleight-of-hand-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-des">
-                <button class="button button-sm skill-button" data-attribute="des" id="stealth">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="des"
+                  id="stealth"
+                >
                   Sigilo
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="stealth-dbl-prof" id="stealth-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="stealth-dbl-prof"
+                      id="stealth-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="stealth-prof" id="stealth-prof" />
+                    <input
+                      type="checkbox"
+                      name="stealth-prof"
+                      id="stealth-prof"
+                    />
                   </label>
                 </div>
               </div>
               <div class="clr-sab">
-                <button class="button button-sm skill-button" data-attribute="sab" id="survival">
+                <button
+                  class="button button-sm skill-button"
+                  data-attribute="sab"
+                  id="survival"
+                >
                   Supervivencia
                 </button>
                 <div>
                   <label>
-                    <input type="checkbox" name="survival-dbl-prof" id="survival-dbl-prof" />
+                    <input
+                      type="checkbox"
+                      name="survival-dbl-prof"
+                      id="survival-dbl-prof"
+                    />
                   </label>
                   <label>
-                    <input type="checkbox" name="survival-prof" id="survival-prof" />
+                    <input
+                      type="checkbox"
+                      name="survival-prof"
+                      id="survival-prof"
+                    />
                   </label>
                 </div>
               </div>
-
-
             </div>
           </div>
-          
-          
 
           <div class="salvations">
             <div class="salvation clr-fue">

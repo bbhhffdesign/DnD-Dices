@@ -127,6 +127,7 @@ function handleSavingThrowRoll(attribute) {
           display.style.color = "#ff0000";
         } else if (d20Rolls.includes(20)) {
           display.style.color = "#46d665";
+          
         } else {
           display.style.color = "white"; 
         }
