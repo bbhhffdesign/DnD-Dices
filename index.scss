@@ -304,7 +304,7 @@ input[type="checkbox"] {
     width: 3rem;
     text-align: center;
     font-size: 2.5rem;
-    border-radius: 0.3rem;
+    // border-radius: 0.3rem;
     border: none;
     background: transparent;
     border-bottom: solid 2px black;
@@ -375,22 +375,22 @@ input[type="checkbox"] {
 }
 
 .clr-fue {
-  background-color: #e12a2adc;
+  background-color: #d33232c3;
 }
 .clr-des {
-  background-color: rgb(255, 106, 0);
+  background-color: rgba(255, 106, 0, 0.83);
 }
 .clr-con {
-  background-color: #6bcc2fca;
+  background-color: #6bcc2fa9;
 }
 .clr-int {
-  background-color: rgb(40, 141, 213);
+  background-color: rgba(40, 141, 213, 0.789);
 }
 .clr-sab {
-  background-color: rgba(238, 238, 68, 0.774);
+  background-color: rgba(238, 238, 68, 0.719);
 }
 .clr-car {
-  background-color: #c306b9d0;
+  background-color: #c306baa8;
 }
 .clr-white {
   background-color: white;
