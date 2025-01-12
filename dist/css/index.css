@@ -280,6 +280,7 @@ input[type=checkbox] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  pointer-events: none;
 }
 .attribute .attr-btn-shadow {
   text-shadow: 3px 3px black;
@@ -296,6 +297,7 @@ input[type=checkbox] {
   border-bottom: solid 2px black;
   color: rgb(13, 13, 13);
   text-align: center;
+  pointer-events: all;
 }
 .attribute input:disabled {
   border-bottom: solid 2px transparent;
@@ -411,6 +413,7 @@ input[type=checkbox] {
 
 .filter-greyscale {
   filter: grayscale(50%);
+  pointer-events: all;
 }
 .filter-greyscale:hover {
   filter: grayscale(0%);

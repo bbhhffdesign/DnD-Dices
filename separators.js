@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const tab = separator.querySelector('.tab');
 
       tab.addEventListener('click', (event) => {
-          // Aseguramos que el evento se active solo si el clic no ocurrió en un input .lock
           if (event.target.closest('.lock')) return; 
           separator.classList.toggle('collapsed');
       });
@@ -20,10 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       attrInputs.forEach(input => {
           input.disabled = isChecked;
+        
       });
       attrButtons.forEach(button => {
+        
+        
         if (isChecked) {
           button.classList.toggle("attr-btn-shadow")
+
         } else {
           button.style.color = '';
           button.classList.toggle("attr-btn-shadow")
@@ -40,3 +43,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
