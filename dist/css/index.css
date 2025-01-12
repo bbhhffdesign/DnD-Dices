@@ -144,6 +144,7 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-shadow: 1px 1px black;
 }
 
 .button {
