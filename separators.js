@@ -42,5 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
           input.disabled = isChecked;
       });
   });
+  document.getElementById('custom-lock').addEventListener('change', (event) => {
+      const isChecked = event.target.checked;
+      const counterInputs = document.querySelectorAll('.attack__input');
+
+      counterInputs.forEach(input => {
+          input.style.pointerEvents = "none";
+          input.disabled = isChecked;
+
+          if(isChecked){
+            input.style.pointerEvents = "none"
+          }else{
+            input.style.pointerEvents = "all"
+          }
+          
+      });
+  });
 });
 

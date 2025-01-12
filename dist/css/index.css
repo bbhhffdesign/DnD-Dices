@@ -591,7 +591,8 @@ input[type=checkbox]:checked {
   margin: 0.5rem;
   border-radius: 0.5rem;
 }
-.counter__container .counter__input {
+
+.counter__input-write {
   flex: 1;
   font-family: inherit;
   font-size: 1.5rem;
@@ -600,13 +601,35 @@ input[type=checkbox]:checked {
   border: none;
   border-bottom: solid 1px black;
 }
-.counter__container .counter__input::-moz-placeholder {
+.counter__input-write::-moz-placeholder {
   color: rgb(200, 200, 200);
 }
-.counter__container .counter__input::placeholder {
+.counter__input-write::placeholder {
   color: rgb(200, 200, 200);
 }
-.counter__container .counter__input:disabled {
+.counter__input-write:disabled {
+  text-shadow: 2px 2px black;
+  box-shadow: none;
+  border: none;
+  font-weight: 400;
+}
+
+.counter__input {
+  flex: 1;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px black;
+}
+.counter__input::-moz-placeholder {
+  color: rgb(200, 200, 200);
+}
+.counter__input::placeholder {
+  color: rgb(200, 200, 200);
+}
+.counter__input:disabled {
   text-shadow: 2px 2px black;
   box-shadow: none;
   border: none;
@@ -633,4 +656,16 @@ input[type=checkbox]:checked {
 }
 .counter__numbers .counter__num {
   width: 2ch;
+}
+
+.attack__input:-webkit-autofill, .attack__input:-webkit-autofill:hover, .attack__input:-webkit-autofill:focus, .attack__input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #36689b inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 100;
+}
+.attack__input:disabled {
+  text-shadow: 2px 2px black;
+  box-shadow: none;
+  border: none;
+  font-weight: 400;
 }/*# sourceMappingURL=index.css.map */

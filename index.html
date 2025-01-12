@@ -238,16 +238,24 @@
         </div>
       </div>
 
-      <div class="separator">
+      <div class="separator collapsed">
         <div class="tab">
           <div>
             <strong> PERSONALIZADOS </strong>
           </div>
-          <div>▼</div>
+          <div style="display: flex; gap: 1rem;" >
+            <input
+            type="checkbox"
+            class="lock"
+            name="custom-lock"
+            id="custom-lock"
+          />
+            <div>▼</div>
+          </div>
         </div>
         <div class="attacks">
           <div class="attack clr-att clr-att1">
-            2d8 + 3
+            <input type="text" name="atk-custom1" class="attack__input counter__input-write" placeholder="Escribe la tirada">
             <input
               type="checkbox"
               class="attack__crit"
@@ -256,6 +264,7 @@
             />
           </div>
           <div class="attack clr-att clr-att2">
+            <input type="text" name="atk-custom2" class="attack__input counter__input-write" placeholder="Escribe la tirada">
             <input
               type="checkbox"
               class="attack__crit"
@@ -264,6 +273,7 @@
             />
           </div>
           <div class="attack clr-att clr-att3">
+            <input type="text" name="atk-custom3" class="attack__input counter__input-write" placeholder="Escribe la tirada">
             <input
               type="checkbox"
               class="attack__crit"
@@ -272,6 +282,7 @@
             />
           </div>
           <div class="attack clr-att clr-att4">
+            <input type="text" name="atk-custom4" class="attack__input counter__input-write" placeholder="Escribe la tirada">
             <input
               type="checkbox"
               class="attack__crit"

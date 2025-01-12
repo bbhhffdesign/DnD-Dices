@@ -196,30 +196,62 @@ function handleSavingThrowRoll(attribute) {
 
 document.addEventListener("DOMContentLoaded", () => {
   // Paladín
-  const attackRolls = {
-    'attack1': '2d6 + 3',
-    'attack2': '1d8 + 3',
-    'attack3': '2d20 + 1d6 + 3',
-    'attack4': '2d20'
-  };
+  // const attackRolls = {
+  //   'attack1': '2d6 + 3',
+  //   'attack2': '1d8 + 3',
+  //   'attack3': '2d20 + 1d6 + 3',
+  //   'attack4': '2d20'
+  // };
 
-  document.querySelectorAll(".attack").forEach((attackDiv, index) => {
-    const attackId = `attack${index + 1}`;
+  // document.querySelectorAll(".attack").forEach((attackDiv, index) => {
+  //   const attackId = `attack${index + 1}`;
     
-    attackDiv.innerText = attackRolls[attackId];
+  //   attackDiv.innerText = attackRolls[attackId];
     
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.classList.add('attack__crit');
-    attackDiv.appendChild(checkbox);
+  //   const checkbox = document.createElement('input');
+  //   checkbox.type = 'checkbox';
+  //   checkbox.classList.add('attack__crit');
+  //   attackDiv.appendChild(checkbox);
     
-    attackDiv.addEventListener("click", (event) => {
-      if (event.target.classList.contains('attack__crit')) {
+  //   attackDiv.addEventListener("click", (event) => {
+  //     if (event.target.classList.contains('attack__crit')) {
+  //       return;
+  //     }
+  //     handleAttackRoll(attackDiv, attackId);
+  //   });
+  // });
+  document.querySelectorAll(".attack").forEach((attackDiv) => {
+    const input = attackDiv.querySelector(".attack__input");
+    const checkbox = attackDiv.querySelector(".attack__crit");
+  
+    // Evitar que el input intercepte clics
+    input.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  
+    attackDiv.addEventListener("click", () => {
+      const rollExpression = input.value.trim(); // Obtiene la tirada escrita en el input
+      if (!rollExpression) {
+        alert("Escribe una tirada en el input antes de lanzar los dados.");
         return;
       }
-      handleAttackRoll(attackDiv, attackId);
+  
+      const isCrit = checkbox.checked; // Verifica si el crítico está activado
+      const finalExpression = adjustRollForCrit(rollExpression, isCrit); // Ajusta los dados si es crítico
+  
+      calculateResult(finalExpression); // Calcula y muestra el resultado
     });
   });
+  
+  function adjustRollForCrit(expression, isCrit) {
+    if (!isCrit) return expression;
+  
+    // Duplica los dados en la tirada (p. ej., "2d8+1d4" -> "4d8+2d4")
+    return expression.replace(/(\d*)d(\d+)/g, (_, numDice, diceType) => {
+      const doubledDice = numDice === "" ? 2 : parseInt(numDice) * 2;
+      return `${doubledDice}d${diceType}`;
+    });
+  }
 
   function handleAttackRoll(attackDiv, attackId) {
     let rollExpression = attackRolls[attackId];
