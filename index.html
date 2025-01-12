@@ -132,48 +132,70 @@
       <div class="separator collapsed">
         <div class="tab">
           <div>
-            <strong> ATRIBUTOS </strong>
+            <strong>ATRIBUTOS</strong>
           </div>
-          <div>▼</div>
+          <div class="tab__right">
+            <input
+              type="checkbox"
+              class="lock"
+              name="attr-lock"
+              id="attr-lock"
+            />
+            <div >▼</div>
+          </div>
         </div>
         <div class="modifiers" id="modifiers">
-          <div class="attribute">
-            <input type="number" id="mod-fue" value="0" />
-            <div class="button button-attr clr-fue">FUE</div>
+          <div class="attribute clr-fue">
+            <input class="attr-input" type="number" id="mod-fue" value="0" />
+            <div class="button button-attr">FUE</div>
           </div>
-          <div class="attribute">
-            <input type="number" id="mod-des" value="0" />
-            <div class="button button-attr clr-des">DES</div>
+          <div class="attribute clr-des">
+            <input class="attr-input" type="number" id="mod-des" value="0" />
+            <div class="button button-attr ">DES</div>
           </div>
-          <div class="attribute">
-            <input type="number" id="mod-con" value="0" />
-            <div class="button button-attr clr-con">CON</div>
+          <div class="attribute clr-con">
+            <input class="attr-input" type="number" id="mod-con" value="0" />
+            <div class="button button-attr ">CON</div>
           </div>
-          <div class="attribute">
-            <input type="number" id="mod-int" value="0" />
-            <div class="button button-attr clr-int">INT</div>
+          <div class="attribute clr-int">
+            <input class="attr-input" type="number" id="mod-int" value="0" />
+            <div class="button button-attr ">INT</div>
           </div>
-          <div class="attribute">
-            <input type="number" id="mod-sab" value="0" />
-            <div class="button button-attr clr-sab">SAB</div>
+          <div class="attribute clr-sab">
+            <input class="attr-input" type="number" id="mod-sab" value="0" />
+            <div class="button button-attr ">SAB</div>
           </div>
-          <div class="attribute">
-            <input type="number" id="mod-car" value="0" />
-            <div class="button button-attr clr-car">CAR</div>
+          <div class="attribute clr-car">
+            <input class="attr-input" type="number" id="mod-car" value="0" />
+            <div class="button button-attr ">CAR</div>
           </div>
         </div>
       </div>
 
-      <div class="separator">
+      <div class="separator collapsed">
         <div class="tab">
           <div>
             <strong>CONTADORES </strong>
           </div>
-          <div>▼</div>
+          <div class="tab__right">
+            <input
+              type="checkbox"
+              class="lock"
+              name="count-lock"
+              id="count-lock"
+            />
+            <div >▼</div>
+          </div>
         </div>
 
         <div class="counter__container counter-1">
-          Contador #1
+          <input
+            type="text"
+            name="count__name1"
+            id="count__name1"
+            class="counter__input"
+            placeholder="Contador #1"
+          />
           <div class="counter__numbers">
             <div class="counter__subs">▼</div>
             <div class="counter__num">0</div>
@@ -181,7 +203,13 @@
           </div>
         </div>
         <div class="counter__container counter-2">
-          Contador #2
+          <input
+            type="text"
+            name="count__name2"
+            id="count__name2"
+            class="counter__input"
+            placeholder="Contador #2"
+          />
           <div class="counter__numbers">
             <div class="counter__subs">▼</div>
             <div class="counter__num">0</div>
@@ -189,7 +217,13 @@
           </div>
         </div>
         <div class="counter__container counter-3">
-          Contador #3
+          <input
+            type="text"
+            name="count__name3"
+            id="count__name3"
+            class="counter__input"
+            placeholder="Contador #3"
+          />
           <div class="counter__numbers">
             <div class="counter__subs">▼</div>
             <div class="counter__num">0</div>
