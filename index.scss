@@ -124,7 +124,7 @@ input {
   border: none;
   margin: 0;
   padding: 0;
-  // padding-right: 1rem;
+  padding-right: 1rem;
   font-size: 3.5rem;
   word-spacing: -0.4rem;
   letter-spacing: -0.1rem;
@@ -202,19 +202,6 @@ input {
   justify-content: space-between;
   color: white;
   border-radius: 0.5rem;
-  
-  input{
-    // appearance: auto;
-    position: relative;
-    // border: solid 1px white;
-
-    // &::after{
-    //   position: absolute;
-    //   width: 100%;
-    //   height: 100%;
-    //   content: "X";
-    // }
-  }
 }
 
 .roll-button {
@@ -237,6 +224,7 @@ label {
 }
 
 input[type="checkbox"] {
+  position: relative;
   height: 2rem;
   width: 2rem;
   appearance: none;
@@ -244,6 +232,15 @@ input[type="checkbox"] {
   background-color: rgba(200, 200, 200, 0.542);
   color: white;
   border-radius: 20%;
+
+  &:checked{
+    background: url("/iconmonstr-x-mark-1.svg");
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+  }
+
 }
 
 #proficiency-bonus {
@@ -550,9 +547,9 @@ input[type="checkbox"] {
       gap: 1rem;
 
       #attr-prof{
+        pointer-events: none;
        
         &:checked{
-          background-color: red;
         }
       }
     }
@@ -561,6 +558,11 @@ input[type="checkbox"] {
       z-index: 2;
       position: relative;
       font-size: 1.5rem;
+
+      &:checked{
+        background-image: none;
+        background-color: inherit;
+      }
 
       &::after {
         content: "🔓";

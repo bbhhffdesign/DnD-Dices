@@ -116,6 +116,7 @@ input {
   border: none;
   margin: 0;
   padding: 0;
+  padding-right: 1rem;
   font-size: 3.5rem;
   word-spacing: -0.4rem;
   letter-spacing: -0.1rem;
@@ -192,9 +193,6 @@ input {
   color: white;
   border-radius: 0.5rem;
 }
-#custom-roll-container input {
-  position: relative;
-}
 
 .roll-button {
   cursor: pointer;
@@ -215,6 +213,7 @@ label {
 }
 
 input[type=checkbox] {
+  position: relative;
   height: 2rem;
   width: 2rem;
   -webkit-appearance: none;
@@ -224,6 +223,13 @@ input[type=checkbox] {
   background-color: rgba(200, 200, 200, 0.542);
   color: white;
   border-radius: 20%;
+}
+input[type=checkbox]:checked {
+  background: url("/iconmonstr-x-mark-1.svg");
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255);
 }
 
 #proficiency-bonus {
@@ -516,13 +522,17 @@ input[type=checkbox] {
   display: flex;
   gap: 1rem;
 }
-.separator .tab .tab__right #attr-prof:checked {
-  background-color: red;
+.separator .tab .tab__right #attr-prof {
+  pointer-events: none;
 }
 .separator .tab .lock {
   z-index: 2;
   position: relative;
   font-size: 1.5rem;
+}
+.separator .tab .lock:checked {
+  background-image: none;
+  background-color: inherit;
 }
 .separator .tab .lock::after {
   content: "🔓";
