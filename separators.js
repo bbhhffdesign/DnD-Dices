@@ -13,7 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const isChecked = event.target.checked;
       const attrInputs = document.querySelectorAll('.attr-input');
       const attrButtons = document.querySelectorAll('.button-attr');
-
+      const attrBoxes = document.querySelectorAll(".attribute");
+      
+      attrBoxes.forEach((button) => {
+        button.classList.toggle("filter-greyscale")
+      })
       attrInputs.forEach(input => {
           input.disabled = isChecked;
       });

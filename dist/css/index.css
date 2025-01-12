@@ -409,6 +409,13 @@ input[type=checkbox] {
   transform: translateX(-50%);
 }
 
+.filter-greyscale {
+  filter: grayscale(50%);
+}
+.filter-greyscale:hover {
+  filter: grayscale(0%);
+}
+
 .skill-salvation {
   display: flex;
   flex-wrap: wrap;

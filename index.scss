@@ -175,6 +175,7 @@ input {
     height: 100%;
     width: 100%;
     top: 0;
+    // backdrop-filter: grayscale(100%);
     // background-color: rgba(136, 78, 78, 0.513);
     // border: solid 1px white;
   }
@@ -287,6 +288,9 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  // filter: grayscale(50%);
+
+
 
   .attr-btn-shadow{
     text-shadow: 3px 3px black;
@@ -409,6 +413,15 @@ input[type="checkbox"] {
   width: auto;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.filter-greyscale{
+  filter: grayscale(50%);
+  
+  &:hover{
+    filter: grayscale(0%);
+
+  }
 }
 .skill-salvation {
   display: flex;
