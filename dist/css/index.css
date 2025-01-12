@@ -192,7 +192,16 @@ input {
   color: white;
   border-radius: 0.5rem;
 }
-
+#custom-roll-container input {
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
+  position: relative;
+}
+#custom-roll-container input:enabled {
+  border: solid 1 px red;
+  background-color: red;
+}
 .roll-button {
   cursor: pointer;
   background-color: #ccc;

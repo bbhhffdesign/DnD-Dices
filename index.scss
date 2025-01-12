@@ -204,6 +204,28 @@ input {
   justify-content: space-between;
   color: white;
   border-radius: 0.5rem;
+  
+  input{
+    appearance: auto;
+    position: relative;
+    // border: solid 1px white;
+  
+
+    &:enabled{
+      border: solid 1 px red;
+      background-color: red;
+    }
+    &:disabled{
+
+    }
+
+    // &::after{
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   content: "X";
+    // }
+  }
 }
 
 .roll-button {
