@@ -78,13 +78,16 @@ function handleSavingThrowRoll(attribute) {
 }
 
   function handleAttributeRoll(attribute) {
+    const attrProf = document.getElementById("attr-prof").checked;
+        
     const mod =
       parseInt(
         document.getElementById(`mod-${attribute.toLowerCase()}`).value
       ) || 0;
     const roll = Math.floor(Math.random() * 20) + 1;
     const total = roll + mod;
-    displayResult(roll, mod, 0, total);
+    displayResult(roll, mod,  attrProf ? 0 : 2, total);
+    
   }
 
   function calculateResult(expression) {

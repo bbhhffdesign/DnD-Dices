@@ -71,7 +71,7 @@
 
       <div id="custom-roll-container">
         <label>
-          Comp
+          <p></p>
           <input type="checkbox" id="add-proficiency-bonus" checked />
         </label>
         <select class="custom-roll__attr" id="attribute-select">
@@ -129,12 +129,18 @@
         </div>
       </div>
 
-      <div class="separator collapsed">
+      <div class="separator ">
         <div class="tab">
           <div>
             <strong>ATRIBUTOS</strong>
           </div>
           <div class="tab__right">
+            <div >
+              <label style="display: flex;" for="attr-prof">
+                <p style="margin: 0;">Comp</p>
+                <input type="checkbox" name="attr-prof" id="attr-prof">
+              </label>
+            </div>
             <input
               type="checkbox"
               class="lock"
@@ -172,7 +178,7 @@
         </div>
       </div>
 
-      <div class="separator collapsed">
+      <div class="separator ">
         <div class="tab">
           <div>
             <strong>CONTADORES </strong>
@@ -276,7 +282,7 @@
         </div>
       </div>
 
-      <div class="separator">
+      <div class="separator collapsed">
         <div class="tab">
           <div>
             <strong> HAB. / SALV. </strong>
@@ -290,9 +296,9 @@
         <div class="skill-salvation">
           <div class="skills" id="skills">
             <div class="skills__col">
-              <div class="clr-des">
+              <div >
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-des"
                   data-attribute="des"
                   id="acrobatics"
                 >
@@ -317,7 +323,7 @@
               </div>
               <div class="clr-sab">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-sab"
                   data-attribute="sab"
                   id="animal-handling"
                 >
@@ -342,7 +348,7 @@
               </div>
               <div class="clr-int">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-int""
                   data-attribute="int"
                   id="arcana"
                 >
@@ -367,7 +373,7 @@
               </div>
               <div class="clr-fue">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-fue"
                   data-attribute="fue"
                   id="athletics"
                 >
@@ -392,7 +398,7 @@
               </div>
               <div class="clr-car">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-car"
                   data-attribute="car"
                   id="deception"
                 >
@@ -417,7 +423,7 @@
               </div>
               <div class="clr-int">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-int"
                   data-attribute="int"
                   id="history"
                 >
@@ -442,7 +448,7 @@
               </div>
               <div class="clr-sab">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-sab"
                   data-attribute="sab"
                   id="insight"
                 >
@@ -467,7 +473,7 @@
               </div>
               <div class="clr-car">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-car"
                   data-attribute="car"
                   id="intimidation"
                 >
@@ -492,7 +498,7 @@
               </div>
               <div class="clr-int">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-int"
                   data-attribute="int"
                   id="investigation"
                 >
@@ -519,7 +525,7 @@
             <div class="skills__col">
               <div class="clr-sab">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-sab"
                   data-attribute="sab"
                   id="medicine"
                 >
@@ -544,7 +550,7 @@
               </div>
               <div class="clr-int">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-int"
                   data-attribute="int"
                   id="nature"
                 >
@@ -569,7 +575,7 @@
               </div>
               <div class="clr-sab">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-sab"
                   data-attribute="sab"
                   id="perception"
                 >
@@ -594,7 +600,7 @@
               </div>
               <div class="clr-car">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-car"
                   data-attribute="car"
                   id="performance"
                 >
@@ -619,7 +625,7 @@
               </div>
               <div class="clr-car">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-car"
                   data-attribute="car"
                   id="persuasion"
                 >
@@ -644,7 +650,7 @@
               </div>
               <div class="clr-int">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-int"
                   data-attribute="int"
                   id="religion"
                 >
@@ -669,7 +675,7 @@
               </div>
               <div class="clr-des">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-des" 
                   data-attribute="des"
                   id="sleight-of-hand"
                 >
@@ -694,7 +700,7 @@
               </div>
               <div class="clr-des">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-des"
                   data-attribute="des"
                   id="stealth"
                 >
@@ -719,7 +725,7 @@
               </div>
               <div class="clr-sab">
                 <button
-                  class="button button-sm skill-button"
+                  class="button button-sm skill-button clr-sab"
                   data-attribute="sab"
                   id="survival"
                 >
@@ -744,31 +750,37 @@
               </div>
             </div>
           </div>
+          
+          <hr>
 
           <div class="salvations">
-            <div class="salvation clr-fue">
-              <div class="button button-sm">Salv Fue</div>
-              <input type="checkbox" id="sal-fue-prof" />
+            <div class="salvations__col">
+              <div class="salvation ">
+                <div class="button button-sm clr-fue">Salv Fuerza</div>
+                <input type="checkbox" id="sal-fue-prof" />
+              </div>
+              <div class="salvation ">
+                <div class="button button-sm clr-des" >Salv Destreza</div>
+                <input type="checkbox" id="sal-des-prof" />
+              </div>
+              <div class="salvation ">
+                <div class="button button-sm clr-con">Salv Constituci.</div>
+                <input type="checkbox" id="sal-con-prof" />
+              </div>
             </div>
-            <div class="salvation clr-des">
-              <div class="button button-sm">Salv Des</div>
-              <input type="checkbox" id="sal-des-prof" />
-            </div>
-            <div class="salvation clr-con">
-              <div class="button button-sm">Salv Con</div>
-              <input type="checkbox" id="sal-con-prof" />
-            </div>
-            <div class="salvation clr-int">
-              <div class="button button-sm">Salv Int</div>
-              <input type="checkbox" id="sal-int-prof" />
-            </div>
-            <div class="salvation clr-sab">
-              <div class="button button-sm">Salv Sab</div>
-              <input type="checkbox" id="sal-sab-prof" />
-            </div>
-            <div class="salvation clr-car">
-              <div class="button button-sm">Salv Car</div>
-              <input type="checkbox" id="sal-car-prof" />
+            <div class="salvations__col">
+              <div class="salvation ">
+                <div class="button button-sm clr-int">Salv Inteligen.</div>
+                <input type="checkbox" id="sal-int-prof" />
+              </div>
+              <div class="salvation ">
+                <div class="button button-sm clr-sab">Salv Sabiduria</div>
+                <input type="checkbox" id="sal-sab-prof" />
+              </div>
+              <div class="salvation ">
+                <div class="button button-sm clr-car">Salv Carisma</div>
+                <input type="checkbox" id="sal-car-prof" />
+              </div>
             </div>
           </div>
         </div>

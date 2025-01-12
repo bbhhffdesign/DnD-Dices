@@ -204,7 +204,7 @@ input {
   border-radius: 0.5rem;
   
   input{
-    appearance: auto;
+    // appearance: auto;
     position: relative;
     // border: solid 1px white;
 
@@ -241,7 +241,7 @@ input[type="checkbox"] {
   width: 2rem;
   appearance: none;
   border: solid 2px black;
-  background-color: rgba(0, 0, 0, 0.542);
+  background-color: rgba(200, 200, 200, 0.542);
   color: white;
   border-radius: 20%;
 }
@@ -299,7 +299,6 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // filter: grayscale(50%);
   pointer-events: none;
 
 
@@ -343,11 +342,22 @@ input[type="checkbox"] {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  gap: .5rem;
+  padding: 0 .5rem;
+
+  & > div{
+    box-sizing: border-box;
+    flex: 1;
+  }
 }
 .skills div {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  // align-items: center;
   padding: 0.2rem 0;
+  gap: .5rem;
+  // margin-right: .5rem;
 }
 .skills label,
 .skills input {
@@ -356,14 +366,44 @@ input[type="checkbox"] {
   //   width: 20px;
 }
 .skills__col {
-  width: 50%;
+  // width: 50%;
   display: flex;
   flex-direction: column;
+  
+  & > div{
+    position: relative;
+    flex: 1;
+    padding: .5rem;
+    background-color: grey;
+    border-radius: .5rem;
 
-  input[type="checkbox"] {
-    width: 25px;
-    margin-right: 0.5rem;
+
   }
+  
+  // div{
+    //   padding: 0;
+    
+    // }
+    
+    button{
+      font-family: "Germania One", serif;
+      font-weight: 100;
+      margin: auto 0;
+      flex: 1;
+      // background-color: inherit;
+  }
+
+  label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    input{
+      height: 25px;
+      width: 25px;
+    }
+  }
+
 
   div {
     button {
@@ -441,23 +481,35 @@ input[type="checkbox"] {
 .skill-salvation {
   display: flex;
   flex-wrap: wrap;
+
+  hr{
+    width: 80%;
+  }
 }
 .salvations {
   box-sizing: border-box;
-  width: 50%;
-  margin: 0 auto;
+  display: flex;
+  // flex-direction: column;
+  flex-wrap: wrap;
+  
+  & > div{
+    flex: 1;
+  }
 }
 .salvation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: solid 1px black;
+  padding: 0 .5rem;
+  border-radius: .5rem;
+  background-color: rgba(202, 202, 202, 0.83);
+  margin: .5rem;
 }
 .salvation .button-sm {
-  width: 50%;
-  background-color: grey;
-  border: solid 1px black;
   margin: 0.5rem 0;
+  font-size: 1rem;
+  padding: .5rem;
 }
 
 .clr-d4 {
@@ -495,12 +547,21 @@ input[type="checkbox"] {
 
     .tab__right {
       display: flex;
+      gap: 1rem;
+
+      #attr-prof{
+       
+        &:checked{
+          background-color: red;
+        }
+      }
     }
 
     .lock {
       z-index: 2;
       position: relative;
       font-size: 1.5rem;
+
       &::after {
         content: "🔓";
         position: absolute;
@@ -509,10 +570,6 @@ input[type="checkbox"] {
         height: 100%;
         font-size: auto;
         top: -15%;
-
-        // bottom: 50%;
-        // left: 50%;
-        // transform: translateY(-50%);
       }
 
       &:checked::after {
