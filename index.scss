@@ -175,9 +175,7 @@ input {
     height: 100%;
     width: 100%;
     top: 0;
-    // backdrop-filter: grayscale(100%);
-    // background-color: rgba(136, 78, 78, 0.513);
-    // border: solid 1px white;
+
   }
 }
 .button:hover {
@@ -209,15 +207,6 @@ input {
     appearance: auto;
     position: relative;
     // border: solid 1px white;
-  
-
-    &:enabled{
-      border: solid 1 px red;
-      background-color: red;
-    }
-    &:disabled{
-
-    }
 
     // &::after{
     //   position: absolute;
