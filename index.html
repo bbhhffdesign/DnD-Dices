@@ -55,9 +55,14 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="dist/css/index.css" />
+    <link rel="stylesheet" href="src/index.css" />
+    <script type="module" crossorigin src="/assets/index-D7OLR7ZB.js"></script>
+    <link rel="stylesheet" crossorigin href="assets/index-CbsmR9N3.css">
   </head>
   <body>
+    <div class="app-container">
+
+  
     <div id="calculator" class="germania-one-regular">
       <div class="display__container">
         <input type="text" id="display" class="iceberg-regular" readonly />
@@ -178,7 +183,7 @@
         </div>
       </div>
 
-      <div class="separator ">
+      <div class="separator collapsed ">
         <div class="tab">
           <div>
             <strong>CONTADORES </strong>
@@ -204,7 +209,7 @@
           />
           <div class="counter__numbers">
             <div class="counter__subs">▼</div>
-            <div class="counter__num">0</div>
+            <div class="counter__num">00</div>
             <div class="counter__add">▲</div>
           </div>
         </div>
@@ -218,7 +223,7 @@
           />
           <div class="counter__numbers">
             <div class="counter__subs">▼</div>
-            <div class="counter__num">0</div>
+            <div class="counter__num">00</div>
             <div class="counter__add">▲</div>
           </div>
         </div>
@@ -232,13 +237,69 @@
           />
           <div class="counter__numbers">
             <div class="counter__subs">▼</div>
-            <div class="counter__num">0</div>
+            <div class="counter__num">00</div>
+            <div class="counter__add">▲</div>
+          </div>
+        </div>
+        <div class="counter__container counter-4">
+          <input
+            type="text"
+            name="count__name4"
+            id="count__name4"
+            class="counter__input"
+            placeholder="Contador #4"
+          /> 
+          <div class="counter__numbers">
+            <div class="counter__subs">▼</div>
+            <div class="counter__num">00</div>
+            <div class="counter__add">▲</div>
+          </div>
+        </div>
+        <div class="counter__container counter-5">
+          <input
+            type="text"
+            name="count__name5"
+            id="count__name5"
+            class="counter__input"
+            placeholder="Contador #5"
+          /> 
+          <div class="counter__numbers">
+            <div class="counter__subs">▼</div>
+            <div class="counter__num">00</div>
+            <div class="counter__add">▲</div>
+          </div>
+        </div>
+        <div class="counter__container counter-6">
+          <input
+            type="text"
+            name="count__name6"
+            id="count__name6"
+            class="counter__input"
+            placeholder="Contador #6"
+          /> 
+          <div class="counter__numbers">
+            <div class="counter__subs">▼</div>
+            <div class="counter__num">00</div>
+            <div class="counter__add">▲</div>
+          </div>
+        </div>
+        <div class="counter__container counter-7">
+          <input
+            type="text"
+            name="count__name7"
+            id="count__name7"
+            class="counter__input"
+            placeholder="Contador #7"
+          /> 
+          <div class="counter__numbers">
+            <div class="counter__subs">▼</div>
+            <div class="counter__num">00d</div>
             <div class="counter__add">▲</div>
           </div>
         </div>
       </div>
 
-      <div class="separator collapsed">
+      <div class="separator ">
         <div class="tab">
           <div>
             <strong> PERSONALIZADOS </strong>
@@ -293,7 +354,7 @@
         </div>
       </div>
 
-      <div class="separator collapsed">
+      <div class="separator">
         <div class="tab">
           <div>
             <strong> HAB. / SALV. </strong>
@@ -797,6 +858,8 @@
         </div>
       </div>
     </div>
+    <div id="root"></div>
+  </div>
     <script src="app.js"></script>
     <script src="separators.js"></script>
     <script src="counters.js"></script>
