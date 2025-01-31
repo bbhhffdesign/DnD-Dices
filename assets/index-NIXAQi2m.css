@@ -2118,7 +2118,7 @@ https://github.com/pure-css/pure/blob/master/LICENSE
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url(/assets/settings-DM4JM5gl.png);
+  background-image: url(/DnD-Dices/assets/settings-DM4JM5gl.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -2185,7 +2185,7 @@ https://github.com/pure-css/pure/blob/master/LICENSE
 .weight__icon {
   height: 1.5rem;
   width: 1.5rem;
-  background-image: url(/assets/weight-DbBx4tvE.png);
+  background-image: url(/DnD-Dices/assets/weight-DbBx4tvE.png);
   background-size: 100% 100%;
 }
 .category__container {
@@ -2222,13 +2222,13 @@ https://github.com/pure-css/pure/blob/master/LICENSE
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url(/assets/category-frame-ClWR9zB-.png);
+  background-image: url(/DnD-Dices/assets/category-frame-ClWR9zB-.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 @media (min-width: 599px) {
   .category__bar:before {
-    background-image: url(/assets/category-frame-xxlg-CDunbmkn.png);
+    background-image: url(/DnD-Dices/assets/category-frame-xxlg-CDunbmkn.png);
   }
 }
 .category__bar h2 {
@@ -2239,12 +2239,12 @@ https://github.com/pure-css/pure/blob/master/LICENSE
   height: 2rem;
   width: 1.5rem;
   z-index: 2;
-  background-image: url(/assets/lock-open-CGZ0KIAf.png);
+  background-image: url(/DnD-Dices/assets/lock-open-CGZ0KIAf.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 .category__bar .lock__category:checked {
-  background-image: url(/assets/lock-closed-BKNJztBW.png);
+  background-image: url(/DnD-Dices/assets/lock-closed-BKNJztBW.png);
 }
 .item__dropdown {
   width: 95%;
@@ -2399,7 +2399,7 @@ https://github.com/pure-css/pure/blob/master/LICENSE
   background-color: #fff;
   background-size: contain;
   border: solid 1px black;
-  background-image: url(/assets/equipped-D4bewpXq.png);
+  background-image: url(/DnD-Dices/assets/equipped-D4bewpXq.png);
 }
 .modal {
   position: absolute;
@@ -2533,7 +2533,7 @@ input[type="submit"] {
   text-align: center;
 }
 .addmoney-form .roundmoney-button {
-  background-image: url(/assets/redondear-Rp9CjTiE.png);
+  background-image: url(/DnD-Dices/assets/redondear-Rp9CjTiE.png);
   background-repeat: no-repeat;
   background-size: 90%;
   background-position: center;
@@ -2562,13 +2562,13 @@ input[type="submit"] {
   background-position: center;
 }
 .addmoney-form .addmoney__input-container .addmoney__input-img-1 {
-  background-image: url(/assets/coin-gold-D2hiNrxy.png);
+  background-image: url(/DnD-Dices/assets/coin-gold-D2hiNrxy.png);
 }
 .addmoney-form .addmoney__input-container .addmoney__input-img-2 {
-  background-image: url(/assets/coin-silver-CUtHX9RO.png);
+  background-image: url(/DnD-Dices/assets/coin-silver-CUtHX9RO.png);
 }
 .addmoney-form .addmoney__input-container .addmoney__input-img-3 {
-  background-image: url(/assets/coin-copper-Cf8vKVvG.png);
+  background-image: url(/DnD-Dices/assets/coin-copper-Cf8vKVvG.png);
 }
 .addmoney-form .addmoney__input-container input[type="number"] {
   all: unset;
@@ -2588,13 +2588,13 @@ input[type="submit"] {
   all: unset;
   height: inherit;
   width: 2rem;
-  background-image: url(/assets/plus-CY0ZJhCx.png);
+  background-image: url(/DnD-Dices/assets/plus-CY0ZJhCx.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 }
 .addmoney-form .addmoney__input-container input[type="checkbox"]:checked {
-  background-image: url(/assets/less-S8hkAD43.png);
+  background-image: url(/DnD-Dices/assets/less-S8hkAD43.png);
 }
 p,
 input[type="number"] {
@@ -2650,7 +2650,7 @@ h2 {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-  background-image: url(/assets/add-button.png);
+  background-image: url(/DnD-Dices/assets/add-button.png);
   background-size: contain;
   width: 4rem;
   height: 4rem;
@@ -2665,6 +2665,6 @@ h2 {
 body {
   margin: 0;
   color: var(--color-black);
-  background-image: url(/assets/stone-gb4-TXgbow26.jpg);
+  background-image: url(/DnD-Dices/assets/stone-gb4-TXgbow26.jpg);
   background-size: fixed;
 }
