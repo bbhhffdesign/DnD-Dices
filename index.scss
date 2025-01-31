@@ -742,6 +742,11 @@ label {
 }
 
 .attack__input {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px black;
+ 
+
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,

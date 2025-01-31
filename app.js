@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const proficiencyBonus = 2;
   let resultShown = false;
   let lastRollExpression = "";
+  window.calculateResult = calculateResult;
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -247,34 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return `${doubledDice}d${diceType}`;
     });
   }
-
-  // function calculateResult(expression) {
-  //   let dicePattern = /(\d*)d(\d+)/g;
-  //   let match;
-  //   let detailedExpression = expression;
-  //   while ((match = dicePattern.exec(expression)) !== null) {
-  //     let numDice = match[1] === "" ? 1 : parseInt(match[1]);
-  //     let diceType = parseInt(match[2]);
-  //     let rolls = [];
-  //     for (let i = 0; i < numDice; i++) {
-  //       rolls.push(Math.floor(Math.random() * diceType) + 1);
-  //     }
-  //     let rollSum = rolls.reduce((acc, curr) => acc + curr, 0);
-  //     detailedExpression = detailedExpression.replace(
-  //       match[0],
-  //       `(${rolls.join(" + ")})`
-  //     );
-  //   }
-
-  //   try {
-  //     let result = eval(
-  //       detailedExpression.replace(/\(([^)]+)\)/g, (_, group) => eval(group))
-  //     );
-  //     document.getElementById("display").value = `${detailedExpression} = ${result}`;
-  //   } catch {
-  //     document.getElementById("display").value = "Error";
-  //   }
-  // }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
