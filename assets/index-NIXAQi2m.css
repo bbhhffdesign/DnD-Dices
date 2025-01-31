@@ -2068,27 +2068,27 @@ https://github.com/pure-css/pure/blob/master/LICENSE
 }
 @media (min-width: 320px) {
   .inventory__header:before {
-    background-image: url(/assets/header-frame-xsm-DJRot-Jq.png);
+    background-image: url(/DnD-Dices/assets/header-frame-xsm-DJRot-Jq.png);
   }
 }
 @media (min-width: 360px) {
   .inventory__header:before {
-    background-image: url(/assets/header-frame-sm-OPBh0ahz.png);
+    background-image: url(/DnD-Dices/assets/header-frame-sm-OPBh0ahz.png);
   }
 }
 @media (min-width: 390px) {
   .inventory__header:before {
-    background-image: url(/assets/header-frame-md-eDnLvex0.png);
+    background-image: url(/DnD-Dices/assets/header-frame-md-eDnLvex0.png);
   }
 }
 @media (min-width: 414px) {
   .inventory__header:before {
-    background-image: url(/assets/header-frame-lg-B1QCP8gA.png);
+    background-image: url(/DnD-Dices/assets/header-frame-lg-B1QCP8gA.png);
   }
 }
 @media (min-width: 599px) {
   .inventory__header:before {
-    background-image: url(/assets/header-frame-xxlg-C7XoPaEx.png);
+    background-image: url(/DnD-Dices/assets/header-frame-xxlg-C7XoPaEx.png);
   }
 }
 .inventory__header .inventory__header-top {
